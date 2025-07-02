@@ -1,1 +1,45 @@
+package jdbcPractice;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class EstablishConnection {
+	
+
+		private static String url= "jdbc:postgresql://localhost:5432/qsp";
+		private static String user= "postgres";
+		private static String pass= "root";
+		
+		public static void main(String[] args) {
+			
+			
+				// 1. Load and register the driver
+				try {
+					Class.forName("org.postgresql.Driver");
+					//2. Create connection
+					Connection con = DriverManager.getConnection(url, user, pass);
+					
+					//print
+					System.out.println("connection done babe!!!!");
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//3.Create Statement
+				//4.Execute Statement
+				//5.Close Connection
+		
+		}
+
+	}
+
+
+
+
+
+
 
